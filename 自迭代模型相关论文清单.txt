@@ -1,0 +1,125 @@
+================================================================
+自迭代模型（Self-Improving / Self-Evolving LLM）相关论文清单
+================================================================
+配合阅读主论文：
+BigBang: Pursuing Open-Ended Intelligence through Self-Evolving
+Synthesis of Verifiable Frontier Tasks
+
+说明：
+1. "PDF 下载"后面的链接可直接下载论文 PDF（arXiv 链接用浏览器
+   打开即可在线阅读，也可直接右键另存为 PDF）。
+2. 论文按主题分组，顺序大致是"思想奠基 → 数据自生成 → 自对齐
+   → 综述 → 最新前沿"，方便循序渐进地阅读。
+3. 每篇只写了"为什么跟自迭代相关"的一句话，详细内容可先看综述。
+
+
+================================================================
+一、思想奠基：自对弈与自我迭代的源头
+================================================================
+
+[1] Mastering the game of Go without human knowledge（AlphaGo Zero）
+    作者：Silver 等，DeepMind，Nature 2017
+    为什么相关：用"自己跟自己下棋"代替人类棋谱，是"不依赖人类
+    数据、靠自我对弈持续变强"这一思想的开山之作。
+    PDF 下载：https://www.nature.com/articles/nature24270.pdf
+
+
+================================================================
+二、数据自生成 / 自训练（Synthetic Data Self-Training）
+================================================================
+
+[2] STaR: Self-Taught Reasoner（Bootstrapping Reasoning With Reasoning）
+    作者：Zelikman 等，2022
+    为什么相关：最早之一用"模型自己生成推理过程，对的保留、错的
+    给答案再重试"来自举（bootstrap）推理能力，是自迭代训练的原型。
+    PDF 下载：https://arxiv.org/pdf/2203.14465
+    详情页：https://arxiv.org/abs/2203.14465
+
+[3] Self-Instruct: Aligning Language Models with Self-Generated Instructions
+    作者：Wang 等，2022
+    为什么相关：让模型自己"出题+答题+筛选"，生成指令数据来训练
+    自己，是"自生成数据"这条线的代表作。
+    PDF 下载：https://arxiv.org/pdf/2212.10560
+    详情页：https://arxiv.org/abs/2212.10560
+
+[4] Self-Refine: Iterative Refinement with Self-Feedback
+    作者：Madaan 等，2023
+    为什么相关：模型对自己的输出"自我批评→自我修改→再批评"多轮
+    迭代，是"自我反馈"环节的核心工作。
+    PDF 下载：https://arxiv.org/pdf/2303.17651
+    详情页：https://arxiv.org/abs/2303.17651
+
+
+================================================================
+三、自对齐 / 自奖励 / 自对弈（Self-Alignment & Self-Play）
+================================================================
+
+[5] Constitutional AI: Harmlessness from AI Feedback（RLAIF）
+    作者：Bai 等，Anthropic，2022
+    为什么相关：用"AI 批评 AI"代替人类反馈（RL from AI Feedback），
+    是"用模型当评委"这一思路（对应 BigBang 里的 critic）的奠基工作。
+    PDF 下载：https://arxiv.org/pdf/2212.08073
+    详情页：https://arxiv.org/abs/2212.08073
+
+[6] Self-Rewarding Language Models
+    作者：Yuan 等，Meta，2024
+    为什么相关：模型同时当"答题者"和"评分者"，用自己的偏好给
+    自己的答案打分来迭代训练，是自奖励自迭代的直接实践。
+    PDF 下载：https://arxiv.org/pdf/2401.10020
+    详情页：https://arxiv.org/abs/2401.10020
+
+[7] Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models（SPIN）
+    作者：Chen 等，UCLA，2024
+    为什么相关：把"自对弈"思想搬到大模型微调上，模型和自己的
+    旧版本对抗，把弱模型练成强模型。
+    PDF 下载：https://arxiv.org/pdf/2401.01335
+    详情页：https://arxiv.org/abs/2401.01335
+
+
+================================================================
+四、综述（先看这两篇，能快速建立全局框架）
+================================================================
+
+[8] A Survey on Self-Evolution of Large Language Models
+    作者：Tao 等，2024
+    为什么相关：系统梳理了 LLM "自进化"的框架、方法和挑战，适合
+    作为入门地图，把上面各篇串起来。
+    PDF 下载：https://arxiv.org/pdf/2404.14387
+    详情页：https://arxiv.org/abs/2404.14387
+
+[9] Recursive Self-Improvement in AI: From Bounded Self-Refinement to
+    Autonomous Research Loops
+    2026
+    为什么相关：最新的递归自我改进（RSI）综述，覆盖从"有限自我
+    修正"到"自主研究闭环"，与 BigBang 的长期目标直接对应。
+    PDF 下载：https://arxiv.org/pdf/2607.07663
+    详情页：https://arxiv.org/abs/2607.07663
+
+
+================================================================
+五、与 BigBang 最接近的最新前沿
+================================================================
+
+[10] AlphaEvolve: A Coding Agent for Scientific and Algorithmic Discovery
+     作者：Novikov 等，DeepMind，2025
+     为什么相关：用"编码智能体 + 进化式搜索 + 自动验证"来自动发现
+     新算法/新公式，是 BigBang 论文明确引用的、最贴近其"可验证
+     前沿任务"思路的工作。
+     PDF 下载：https://arxiv.org/pdf/2506.13131
+     详情页：https://arxiv.org/abs/2506.13131
+
+[11] Absolute Zero: Reinforced Self-Play Reasoning with Zero Data
+     作者：Zhao 等，2025
+     为什么相关：完全不依赖人类数据，用自我对弈强化学习练推理，
+     体现"零数据自迭代"这条极端路线（BigBang 论文也引用了它）。
+     PDF 下载：https://arxiv.org/pdf/2505.03335
+     详情页：https://arxiv.org/abs/2505.03335
+
+
+================================================================
+附：BigBang 论文本身的开源代码与模型权重
+================================================================
+
+代码：https://github.com/endless-frontier/BigBang-v1
+模型：https://huggingface.co/endless-frontier/BigBang-v1
+================================================================
